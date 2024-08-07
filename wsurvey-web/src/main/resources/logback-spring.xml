@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml" /> <!-- spring boot 내 기본 defaults.xml 파일 include -->
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml" /> <!-- spring boot 내 기본 console-appender.xml 파일 include -->
+    <include resource="appender/file-appender.xml"/>
+
+    <root>
+        <springProfile name="development"> <!-- development(개발 환경) profile 에서 아래의 appender를 추가 -->
+            <appender-ref ref="CONSOLE"/>
+            <appender-ref ref="FILE"/>
+        </springProfile>
+        <springProfile name="quality-assurance"> <!-- quality-assurance(검증 환경) profile에서 다음의 appender 추가 -->
+            <appender-ref ref="CONSOLE"/>
+            <appender-ref ref="FILE"/>
+
+        </springProfile>
+        <springProfile name="production"> <!-- production(운영 환경) profile에서 다음의 appender 추가 -->
+            <appender-ref ref="CONSOLE"/>
+            <appender-ref ref="FILE"/>
+
+        </springProfile>
+    </root>
+</configuration>

@@ -1,0 +1,6 @@
+logging:
+  charset:
+    console: UTF-8
+  pattern:
+    dateformat: yyyy-MM-dd HH:mm:ss
+    console: "%yellow([%d{${logging.pattern.dateformat}}]) %magenta([%-3level]) %cyan(%logger) - %msg %n"
