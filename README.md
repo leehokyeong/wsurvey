@@ -119,3 +119,6 @@
 6. validation
 
 - api request 에 대한 valid 적용
+
+  
+- thymeleaf 입력 폼 설정 및 valid 적용
