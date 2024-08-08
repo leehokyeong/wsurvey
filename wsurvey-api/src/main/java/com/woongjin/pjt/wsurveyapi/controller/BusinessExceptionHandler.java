@@ -19,9 +19,12 @@ public class BusinessExceptionHandler {
     public ResponseEntity<ErrorResponse> handleBusinessException(BusinessException ex){
         log.info("비즈니스익셉션발생!!!!!!!!!!!!!!!!!!!!!!!!!");
         ErrorCode errorCode = ex.getErrorCode();
-        ErrorResponse errorResponse = new ErrorResponse(errorCode.getCode(), errorCode.getMessage()); // errorResponse 생성자
+        ErrorResponse errorResponse = ErrorResponse.builder()
+                                                    .code(errorCode.getCode())
+                                                    .message(errorCode.getMessage())
+                                                    .build();
+        //ErrorResponse errorResponse = new ErrorResponse(errorCode.getCode(), errorCode.getMessage()); // errorResponse 생성자
         return new ResponseEntity<>(errorResponse, HttpStatus.valueOf(errorCode.getHttpStatus()));
-        //return ResponseEntity.status(errorCode.getHttpStatus()).body(errorResponse); // enum에 정의한 httpStatus를 상태값으로, body에는 errorResponse를 return
     }
 
 }
