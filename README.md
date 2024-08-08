@@ -114,3 +114,8 @@
 - RuntimeException 을 상속받도록 함.
 
 
+***
+
+6. validation
+
+- api request 에 대한 valid 적용
