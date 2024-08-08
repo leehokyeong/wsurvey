@@ -36,12 +36,12 @@ public class BoardController {
                                 .data(requestBoardDto)
                                 .build();
         return new ResponseEntity<>(apiResponse, HttpStatus.OK);
-        //return ResponseEntity.ok().body(new ApiResponse<>(true, "board객체 검증성공!!", board));
     }
 
     @PostMapping("/exceptionTest")
     public ResponseEntity<Void> exceptionTest(){
         throw new BusinessException(ErrorCode.FORBIDDEN);
+        //throw new BusinessException("사용자정의 exception 메세지",ErrorCode.CUSTOM_ERROR);
     }
 
 }

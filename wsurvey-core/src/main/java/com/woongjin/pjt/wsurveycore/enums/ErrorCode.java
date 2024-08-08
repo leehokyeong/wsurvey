@@ -13,7 +13,8 @@ public enum ErrorCode {
     ,UNAVAILABLE(401, "E004","토큰 정보가 유효하지 않습니다.")
     ,FORBIDDEN(403,"E005","접근이 금지되었습니다.")
     ,NOT_FOUND(404,"E006","리소스를 찾을 수 없습니다.")
-    ,SERVER_ERROR(500,"E007","요청을 처리하는 도중 예기치 않은 오류가 발생하였습니다.");
+    ,SERVER_ERROR(500,"E007","요청을 처리하는 도중 예기치 않은 오류가 발생하였습니다.")
+    ,CUSTOM_ERROR(500,"E999","");
 
     private final int httpStatus; // header로 반환할 httpstatus code
     private final String code; // payload로 반환할 에러코드

@@ -6,6 +6,7 @@ import com.woongjin.pjt.wsurveycore.exception.BusinessException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
@@ -19,11 +20,18 @@ public class BusinessExceptionHandler {
     public ResponseEntity<ErrorResponse> handleBusinessException(BusinessException ex){
         log.info("비즈니스익셉션발생!!!!!!!!!!!!!!!!!!!!!!!!!");
         ErrorCode errorCode = ex.getErrorCode();
+        String message = errorCode.getMessage();
+
+        // 사용자정의 메세지가 있을경우 enum 메세지가 아닌 해당 메세지 return
+        if(!ex.getMessage().isEmpty()){
+            message = ex.getMessage();
+        }
+
         ErrorResponse errorResponse = ErrorResponse.builder()
                                                     .code(errorCode.getCode())
-                                                    .message(errorCode.getMessage())
+                                                    .message(message)
                                                     .build();
-        //ErrorResponse errorResponse = new ErrorResponse(errorCode.getCode(), errorCode.getMessage()); // errorResponse 생성자
+
         return new ResponseEntity<>(errorResponse, HttpStatus.valueOf(errorCode.getHttpStatus()));
     }
 

@@ -8,5 +8,4 @@ public class ResultBoardDto {
     String content;
     String writer;
     String isContentOpenYn;
-
 }
