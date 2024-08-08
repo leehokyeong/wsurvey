@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Form</title>
+</head>
+<body>
+<h1>Enter User Details</h1>
+<form action="#" th:action="@{/submitUser}" th:object="${user}" method="post">
+    <label for="eno">사번:</label>
+    <input type="text" id="eno" th:field="*{eno}" /><br/><br/>
+    <div th:if="${#fields.hasErrors('eno')}" th:errors="*{eno}"></div>
+
+    <label for="name">성명:</label>
+    <input type="text" id="name" th:field="*{name}" /><br/><br/>
+    <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+
+    <label for="birth">생년월일:</label>
+    <input type="text" id="birth" th:field="*{birth}" /><br/><br/>
+    <div th:if="${#fields.hasErrors('birth')}" th:errors="*{birth}"></div>
+
+    <label for="cgagTno">휴대전화번호:</label>
+    <input type="text" id="cgagTno" th:field="*{cgagTno}" /><br/><br/>
+    <div th:if="${#fields.hasErrors('cgagTno')}" th:errors="*{cgagTno}"></div>
+
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>
