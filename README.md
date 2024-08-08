@@ -1,12 +1,12 @@
 # 스터디 project
 1. 멀티 모듈 프로젝트
-### 공통 모듈(공통 유틸, 기능 등) : core
+- 공통 모듈(공통 유틸, 기능 등) : core
 
 
-### web 모듈(web 화면 서비스) : web
+- web 모듈(web 화면 서비스) : web
 
 
-### api 모듈(Rest-api 서비스) : api
+- api 모듈(Rest-api 서비스) : api
 
 
 ***
