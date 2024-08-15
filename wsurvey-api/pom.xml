@@ -21,6 +21,13 @@
 			<artifactId>wsurvey-core</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<!--  Spring Boot 프로젝트에 Swagger UI를 적용 -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>1.7.0</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

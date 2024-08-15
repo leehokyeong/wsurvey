@@ -19,7 +19,7 @@ public class HomeController {
         return "userForm";
     }
     @PostMapping("/submitUser")
-    public String submitUser(@Valid @ModelAttribute User user, Model model, BindingResult bindingResult){
+    public String submitUser(@Valid @ModelAttribute User user, BindingResult bindingResult, Model model){
         if(bindingResult.hasErrors()){
             return "userForm"; // 유효성 검증 실패 시 다시 폼을 보여줌
         }
