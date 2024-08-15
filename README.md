@@ -126,4 +126,4 @@
 ***
 
 7. swagger UI
-- api 문서화 적용
+- springdoc api 문서화 적용
