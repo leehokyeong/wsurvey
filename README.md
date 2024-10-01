@@ -122,3 +122,8 @@
 
   
 - thymeleaf 입력 폼 설정 및 valid 적용
+
+***
+
+7. swagger UI
+- springdoc api 문서화 적용
